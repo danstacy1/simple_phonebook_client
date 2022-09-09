@@ -4,7 +4,7 @@ const Home = (props) => {
 
 	return (
 		<>
-			<h2>Home Page</h2>
+			<h2>Make sure to add the Index page to Home.js</h2>
 		</>
 	)
 }
