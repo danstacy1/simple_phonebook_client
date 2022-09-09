@@ -40,7 +40,7 @@ const CreateUserInfo = (props) => {
         console.log('this is the user', user)
         console.log('this is the userInfo', userInfo)
         createUserInfo(user, userInfo)
-            .then(res => { navigate(`/userInfo/${res.data.userInfo.id}`)})
+            .then(res => { navigate(`/userInfo/${res.data.userInfo._id}`)})
             .then(() => {
                 msgAlert({
                     heading: 'Oh Yeah!',

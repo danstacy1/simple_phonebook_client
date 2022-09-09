@@ -13,6 +13,7 @@ import SignIn from './components/auth/SignIn'
 import SignOut from './components/auth/SignOut'
 import ChangePassword from './components/auth/ChangePassword'
 import CreateUserInfo from './components/user_info/CreateUserInfo'
+import ShowUserInfo from './components/user_info/ShowUserInfo'
 
 const App = () => {
 
@@ -70,11 +71,15 @@ const App = () => {
 						</RequireAuth>}
 					/>
 					<Route
+						path="/userInfo/:id"
+						element={ <ShowUserInfo user={ user } msgAlert={ msgAlert } />}
+						/> 
+					<Route
 						path="/addUserInfo"
 						element={
 						<RequireAuth user={ user }>
 							<CreateUserInfo msgAlert={msgAlert} user={user} />
-						</RequireAuth>  
+						</RequireAuth> 
 					}
 					/>
 					</Routes>

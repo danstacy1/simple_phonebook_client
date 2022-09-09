@@ -52,11 +52,11 @@ useEffect(() => {
     }
 
     const userInfoCards = userInfo.map(userInfo => (
-        <Card style={{ width: '30%', margin: 5}} key={ userInfo.id }>
+        <Card style={{ width: '30%', margin: 5}} key={ userInfo._id }>
             <Card.Header>{ userInfo.fullTitle }</Card.Header>
             <Card.Body>
                 <Card.Text>
-                    <Link to={`/userInfo/${userInfo.id}`}>Check out the { userInfo.name }s</Link>
+                    <Link to={`/userInfo/${userInfo._id}`}>Check out the { userInfo.name }s</Link>
                 </Card.Text>
             </Card.Body>
         </Card>
