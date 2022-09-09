@@ -48,7 +48,7 @@ useEffect(() => {
     if (!userInfo) {
         return <LoadingScreen />
     } else if (userInfo.length === 0) {
-        return <p>There aren't any userInfo here. Better add some dope kicks.</p>
+        return <p>There aren't any people here. Better add some.</p>
     }
 
     const userInfoCards = userInfo.map(userInfo => (
