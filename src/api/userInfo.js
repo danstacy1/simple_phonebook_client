@@ -2,13 +2,13 @@ import apiUrl from '../apiConfig'
 import axios from 'axios'
 
 // READ => INDEX
-export const getAllUserInfos = () => {
-    return axios(`${apiUrl}/userInfos`)
+export const getAllUserInfo = () => {
+    return axios(`${apiUrl}/userInfo`)
 }
 
 // READ => SHOW
 export const getOneUserInfo = (id) => {
-    return axios(`${apiUrl}/userInfos/${id}`)
+    return axios(`${apiUrl}/userInfo/${id}`)
 }
 
 // CREATE
@@ -17,7 +17,7 @@ export const createUserInfo = (user, newUserInfo) => {
     // console.log('this is user', user)
     // console.log('this is newUserInfo', newUserInfo)
     return axios({
-		url: apiUrl + '/userInfos',
+		url: apiUrl + '/userInfo',
 		method: 'POST',
 		headers: {
 			Authorization: `Token token=${user.token}`,
@@ -31,12 +31,12 @@ export const updateUserInfo = (user, updatedUserInfo) => {
     // console.log('createUserInfo in api was hit')
     // in our createUserInfo form, we're building an object
     // when we pass that object into the api createUserInfo function,
-    // it's going to look like the userInfos in our database
+    // it's going to look like the userInfo in our database
     // we're going to refer to this as newUserInfo
     // console.log('this is user', user)
     console.log('this is updatedUserInfo', updatedUserInfo)
 	return axios({
-		url: `${apiUrl}/userInfos/${updatedUserInfo.id}`,
+		url: `${apiUrl}/userInfo/${updatedUserInfo.id}`,
 		method: 'PATCH',
 		headers: {
 			Authorization: `Token token=${user.token}`,
@@ -48,7 +48,7 @@ export const updateUserInfo = (user, updatedUserInfo) => {
 // DELETE
 export const removeUserInfo = (user, userInfoId) => {
     return axios({
-        url: `${apiUrl}/userInfos/${userInfoId}`,
+        url: `${apiUrl}/userInfo/${userInfoId}`,
         method: 'DELETE',
         headers: {
             Authorization: `Token token=${user.token}`,
