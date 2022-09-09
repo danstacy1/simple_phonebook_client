@@ -5,7 +5,7 @@ import { createUserInfoSuccess, createUserInfoFailure } from '../shared/AutoDism
 import UserInfoForm from '../shared/UserInfoForm'
 
 const CreateUserInfo = (props) => {
-    // console.log('these are the props in createUserInfo\n', props)
+    console.log('these are the props in createUserInfo\n', props)
     const { user, msgAlert } = props
 
     const navigate = useNavigate()
@@ -37,10 +37,10 @@ const CreateUserInfo = (props) => {
     
     const handleSubmit = (e) => {
         e.preventDefault()
-        console.log('this is the user', user)
+        // console.log('this is the user', user)
         console.log('this is the userInfo', userInfo)
         createUserInfo(user, userInfo)
-            .then(res => { navigate(`/userInfo/${res.data.userInfo._id}`)})
+            .then(res => { navigate(`/userInfo/${res.data.userInfo.id}`)})
             .then(() => {
                 msgAlert({
                     heading: 'Oh Yeah!',
@@ -56,7 +56,6 @@ const CreateUserInfo = (props) => {
                 })
             )
     }
-
 
     return (
         <UserInfoForm 

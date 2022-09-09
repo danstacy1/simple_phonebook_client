@@ -12,8 +12,9 @@ import SignUp from './components/auth/SignUp'
 import SignIn from './components/auth/SignIn'
 import SignOut from './components/auth/SignOut'
 import ChangePassword from './components/auth/ChangePassword'
-import CreateUserInfo from './components/user_info/CreateUserInfo'
 import ShowUserInfo from './components/user_info/ShowUserInfo'
+import CreateUserInfo from './components/user_info/CreateUserInfo'
+import UserInfoIndex from './components/user_info/UserInfoIndex'
 
 const App = () => {
 
@@ -46,7 +47,7 @@ const App = () => {
 			<Fragment>
 				<Header user={user} />
 				<Routes>
-					<Route path='/' element={<Home msgAlert={msgAlert} user={user} />} />
+					<Route path='/userInfo' element={<Home msgAlert={msgAlert} user={user} />} />
 					<Route
 						path='/sign-up'
 						element={<SignUp msgAlert={msgAlert} setUser={setUser} />}
@@ -70,6 +71,11 @@ const App = () => {
 							<ChangePassword msgAlert={msgAlert} user={user} />
 						</RequireAuth>}
 					/>
+					<Route
+						path="/userInfo"
+						element={
+							<UserInfoIndex msgAlert={msgAlert} user={user} />}
+						/>
 					<Route
 						path="/userInfo/:id"
 						element={ <ShowUserInfo user={ user } msgAlert={ msgAlert } />}

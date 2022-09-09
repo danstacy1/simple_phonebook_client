@@ -29,7 +29,7 @@ console.log('Props in UserInfoIndex', props)
 useEffect(() => {
     console.log(props)
     getAllUserInfo()
-        .then(res => setUserInfo(res.data.shoes))
+        .then(res => setUserInfo(res.data.userInfo))
         .catch(err => {
             msgAlert({
                 heading: 'Error Getting UserInfo',
@@ -48,7 +48,7 @@ useEffect(() => {
     if (!userInfo) {
         return <LoadingScreen />
     } else if (userInfo.length === 0) {
-        return <p>There aren't any people here. Better add some.</p>
+        return <p>There aren't any numbers here. Better add some.</p>
     }
 
     const userInfoCards = userInfo.map(userInfo => (
