@@ -1,4 +1,4 @@
-import UserInfoIndex from './userInfo/UserInfoIndex'
+import UserInfoIndex from './user_info/UserInfoIndex'
 
 const Home = (props) => {
 	// const { msgAlert, user } = props
